@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import DisplayTaskCards from './components/DisplayTaskCards';
+import About from './components/About';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
    }, [taskCards]);
 
   return (
+    <>
     <Tabs 
     defaultActiveKey="home"
     id='fill-tab-example'
@@ -31,23 +33,22 @@ const App = () => {
              <h1 className="d-flex justify-content-center align-items-center wrap py-4 my-4 neon-text fs-2" id="taskForge">Task <strong className="text-warning fs-1">F</strong>orge</h1>
 
              <InputField taskCards={taskCards} setTaskCards={setTaskCards}/>
-             
-             <CookieBanner />
-             
-             <Footer />
-
         </Tab>
 
         <Tab eventKey="task-cards" title="My Tasks">
-              <DisplayTaskCards taskCards={taskCards} setTaskCards={setTaskCards}/>
-              <Footer />
+              <DisplayTaskCards taskCards={taskCards} setTaskCards={setTaskCards}/>    
         </Tab>
 
-        <Tab eventKey="about" title="About">Learn More
-        <Footer />
+        <Tab eventKey="about" title="About">
+              <About/>
         </Tab>
-
+        
     </Tabs>
+
+    <CookieBanner/>
+    
+    <Footer />
+    </>
   
   )
 }
