@@ -10,23 +10,51 @@ body {
   font-weight: 200;
 }
 
+
 footer {
   width:100vw;
   position: fixed;
-  bottom:0px;
-  height: 20vh;
+  bottom:0;
+  height: 13vh;
+  
 }
+
 footer div {
   background-color:#4478e3;
   margin: -5px 0px 0px 0px;
   padding:0px;
   color: #fff;
   text-align:center;
+  bottom: 0;
+  overflow: hidden;
 }
 svg {
   width:100%;
-  bottom: 0px;
+  bottom: 0;
+  position: relative;
 
+}
+@media screen and (min-width: 1024px)  {
+  footer {
+    width:100vw;
+    position: fixed;
+    height: 20vh;
+    bottom:0;
+  }
+  svg {
+    width:100%;
+    bottom: 0;
+    position: relative;
+  }
+  footer div {
+    background-color:#4478e3;
+    margin: -5px 0px 0px 0px;
+    padding:0px;
+    color: #fff;
+    text-align:center;
+    bottom: 0;
+    overflow: hidden;
+  }
 }
 .topball {
   animation: ball 2.5s ease-in-out;
