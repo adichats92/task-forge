@@ -9,12 +9,19 @@ function Edit({ handleClose, show, taskCardData, updateTask }) {
     setEditedTask(taskCardData);
   }, [taskCardData]);
 
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setEditedTask({
+  //     ...editedTask,
+  //     [name]: value,
+  //   });
+  // };
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setEditedTask({
-      ...editedTask,
+    setEditedTask((prevTask) => ({
+      ...prevTask,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -30,7 +37,7 @@ function Edit({ handleClose, show, taskCardData, updateTask }) {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="formTitle">
+          <Form.Group className='py-2' controlId="formTitle">
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
@@ -40,7 +47,7 @@ function Edit({ handleClose, show, taskCardData, updateTask }) {
             />
           </Form.Group>
 
-          <Form.Group controlId="formGridDetails">
+          <Form.Group className='py-2' controlId="formGridDetails">
             <Form.Label>Details</Form.Label>
             <Form.Control
               name="details"
@@ -53,7 +60,7 @@ function Edit({ handleClose, show, taskCardData, updateTask }) {
             />
           </Form.Group>
 
-          <Form.Group controlId="formGridLocation">
+          <Form.Group className='py-2' controlId="formGridLocation">
             <Form.Label>Location</Form.Label>
             <Form.Control
               name="location"
@@ -63,9 +70,10 @@ function Edit({ handleClose, show, taskCardData, updateTask }) {
             />
           </Form.Group>
 
-          <Form.Group controlId="formGridPriority">
+          <Form.Group className='py-2' controlId="formGridPriority">
             <Form.Label>Priority</Form.Label>
             <Form.Select
+              name='priority'
               value={editedTask.priority || ''}
               onChange={handleChange}
             >
@@ -75,7 +83,7 @@ function Edit({ handleClose, show, taskCardData, updateTask }) {
             </Form.Select>
           </Form.Group>
 
-          <Form.Group controlId="formGridTime">
+          <Form.Group className='py-2' controlId="formGridTime">
             <Form.Label>Set Time</Form.Label>
             <Form.Control
               type="time"
@@ -86,7 +94,7 @@ function Edit({ handleClose, show, taskCardData, updateTask }) {
             />
           </Form.Group>
 
-          <Button type="submit">Update</Button>
+          <Button className='my-4' type="submit">Update</Button>
         </Form>
       </Offcanvas.Body>
     </Offcanvas>

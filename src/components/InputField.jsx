@@ -10,15 +10,23 @@ const InputField = ({setTaskCards}) => {
       title: "",
       details: "",
       location: "",
-      priority: "",
+      priority: "Normal",
       time: ""
     });
+  // 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setTaskCardInput((prevInput) => ({
-      ...prevInput,
-      [name]: value
-    }));
+    if (name === 'priority') {
+      setTaskCardInput(prevInput => ({
+        ...prevInput,
+        [name]: value
+      }));
+    } else {
+      setTaskCardInput(prevInput => ({
+        ...prevInput,
+        [name]: value
+      }));
+    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -89,7 +97,7 @@ const InputField = ({setTaskCards}) => {
         <Form.Group className="my-3 px-1" 
         as={Col} xs={{ span: 12, offset: 0 }} md={{ span: 6, offset: 3 }} xl={{ span: 4, offset: 4 }} controlId="formGridPriority">
           <Form.Label>Priority</Form.Label>
-          <Form.Select defaultValue="Normal" onChange={handleChange}>
+          <Form.Select name='priority' value={taskCardInput.priority} onChange={handleChange}>
           <option id='normal' name='priority' value='Normal'>Normal</option>
           <option id='high' name='priority' value='High'>High</option>
           <option id='low' name='priority' value='Low'>Low</option>

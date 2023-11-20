@@ -17,7 +17,7 @@ const DisplayTaskCards = ({taskCards, setTaskCards}) => {
     <div className="block">
       <div className="list-group">
         {taskCards
-          .sort((a, b) => (a.done ? 1 : -1))
+          .sort((a) => (a.done ? 1 : -1))
           .map((taskCard) => (
             <TaskCard
               key={taskCard.id}
