@@ -15,7 +15,7 @@ footer {
   width:100vw;
   position: fixed;
   bottom:0;
-  height: 13vh;
+  height: 10vh;
   
 }
 
@@ -32,19 +32,22 @@ svg {
   width:100%;
   bottom: 0;
   position: relative;
+  margin-top: 1;
 
 }
 @media screen and (min-width: 1024px)  {
   footer {
     width:100vw;
     position: fixed;
-    height: 20vh;
+    height: 14vh;
     bottom:0;
   }
   svg {
     width:100%;
     bottom: 0;
     position: relative;
+    margin-top: 1;
+    
   }
   footer div {
     background-color:#4478e3;

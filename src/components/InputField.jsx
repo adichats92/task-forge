@@ -50,7 +50,7 @@ const InputField = ({setTaskCards}) => {
 
   };
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className='mb-2'>
 
       <Form.Group className="mb-3 px-1" 
       as={Col} xs={{ span: 12, offset: 0 }} md={{ span: 6, offset: 3 }} xl={{ span: 4, offset: 4 }} 
@@ -115,7 +115,7 @@ const InputField = ({setTaskCards}) => {
           />
         </Form.Group>
 
-      <Button onClick={handleSubmit} as={Col} xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }} xl={{ span: 4, offset: 4 }} variant="warning"  className='my-5 px-5 py-2'
+      <Button onClick={handleSubmit} as={Col} xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }} xl={{ span: 4, offset: 4 }} variant="warning"  className=' my-5 px-5 py-2'
       >
         Submit
       </Button>

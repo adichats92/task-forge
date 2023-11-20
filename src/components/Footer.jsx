@@ -1,7 +1,7 @@
 import '../index.css';
 const Footer = () => {
     return (
-        <footer>
+        <footer className='mt-5'>
         <svg viewBox="0 0 120 28">
          <defs> 
            <mask id="xxx">
