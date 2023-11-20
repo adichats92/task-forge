@@ -14,8 +14,8 @@ const DisplayTaskCards = ({taskCards, setTaskCards}) => {
   };
 
   return (
-    <div className="block">
-      <div className="list-group">
+    <div className="block mb-5 pb-5">
+      <div className="list-group mb-5 pb-5">
         {taskCards
           .sort((a) => (a.done ? 1 : -1))
           .map((taskCard) => (

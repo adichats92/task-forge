@@ -42,11 +42,11 @@ const TaskCard = ({ taskCard, toggleCompletion, deleteTask, setTaskCards, taskCa
 
   return (
     <>
-      <Card className={`card ${taskCard.priority} ${taskCard.done} ${cardBorderStyle} mb-3`}>
-        <Card.Header as="h3" className='fs-2'>{taskCard.title}</Card.Header>
-      <Card.Body className='fs-5 d-sm-flex justify-content-between align-items-center'>
+      <Card className={`card ${taskCard.priority} ${taskCard.done} ${cardBorderStyle} my-4 mx-5 d-flex flex-row`}>
+        <Card.Header as="h3" className='fs-2 text-center p-3 text-wrap'>{taskCard.title}</Card.Header>
+      <Card.Body className='fs-5'>
         <Form>
-          <Form.Group className="m-1 p-2" controlId="formBasicCheckbox">
+          <Form.Group className=" p-5 position-absolute top-0 start-100 translate-middle" controlId="formBasicCheckbox">
           <Form.Check
           type="checkbox"
           id={`taskCard_${taskCard.id}`}
@@ -57,21 +57,22 @@ const TaskCard = ({ taskCard, toggleCompletion, deleteTask, setTaskCards, taskCa
           />
         </Form.Group>
         </Form>
-        <Card.Text className='m-1  text-wrap' style={{minWidth: '20rem'}}>
+        <Card.Text className='py-5 m- text-wrap text-baseline'>
           {taskCard.details}
         </Card.Text>
         
-        <Card.Text className='m-1'>
+        <Card.Text className='m-1 p-2 position-absolute bottom-0 start-0 translate-x'>
           ⏰ {taskCard.time}
         </Card.Text>
-        <Card.Text className='m-1'>
+        <Card.Text className='m-1 p-2 position-absolute bottom-0 end-0 translate-x'>
           📌 {taskCard.location}
         </Card.Text>
-        
+        <div className="btn-group position-absolute top-0 end-0 translate p-2" role="group" aria-label="Basic mixed styles example">
         <Button onClick={editButton} variant="primary"className='  m-1'>
         Edit</Button>
       
         <Button onClick={handleDelete} variant="danger" className=' m-1'>Delete</Button>
+        </div>
       </Card.Body>
     </Card>
     <Edit
